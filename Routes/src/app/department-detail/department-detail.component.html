@@ -1,0 +1,12 @@
+<h3>
+  Você selecionou o departamento id = {{departmentId}}  
+</h3>
+
+<p>
+  <button (click)="showOverview()">Visão Geral</button>
+  <button (click)="showContact()">Contato</button>
+</p>
+<router-outlet></router-outlet>
+
+<button (click)="GoPrevious()">Anterior</button>
+<button (click)="GoNext()">Próximo</button>
