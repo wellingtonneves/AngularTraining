@@ -1,0 +1,14 @@
+<table class="table table-hover">
+  <tr *ngFor="let cli of service.list">
+    <td (click)="popularForm(cli)">[{{cli.id}}] - {{cli.nome}} {{cli.ultimoNome}}</td>
+    <td (click)="popularForm(cli)">{{cli.dataCadastro | date : "dd/MM/yyyy"}}</td>
+    <td (click)="popularForm(cli)">{{cli.telefone}}</td>
+    <td class="text-center">
+      <input type="checkbox" [(ngModel)]='cli.ativo'>
+    </td>
+    <td>
+      <!-- <button (click)="onDeletar(cli.id)" class="btn btn-sm btn-outline-danger">X</button> -->
+      <button (click)="onDeletar(cli.id)" class="btn btn-sm btn-outline-danger">X</button>
+    </td>    
+  </tr>
+</table>

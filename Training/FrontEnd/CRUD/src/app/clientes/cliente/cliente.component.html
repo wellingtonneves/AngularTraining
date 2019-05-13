@@ -1,0 +1,29 @@
+<form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+  <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id">
+  <div class="form-group">
+    <label>Nome</label>
+    <input name="nome" #nome="ngModel" [(ngModel)]="service.formData.nome" class="form-control" required>
+    <div class="validation-error" *ngIf="nome.invalid && nome.touched">Campo Obrigatório</div>
+  </div>
+
+  <div class="form-group">
+    <label>Último Nome</label>
+    <input type="text" class="form-control" #UltimoNome="ngModel" name="ultimoNome" [(ngModel)]="service.formData.ultimoNome">
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Telefone</label>
+      <input type="text" class="form-control" #Telefone="ngModel" name="telefone" [(ngModel)]="service.formData.telefone">
+    </div>
+  
+    <div class="form-group col-md-6 radioLeft">
+      <input type="radio" #Ativo="ngModel" name="ativo" [(ngModel)]="service.formData.ativo"  [value]="true"><br/><br/> <span class="spanBottom">Ativo</span>       
+    </div>
+  </div>
+
+  <div class="form-group">
+    <button [disabled]="form.invalid" type="submit" class="btn btn-lg btn-block">Salvar</button>
+  </div>
+   
+</form>
