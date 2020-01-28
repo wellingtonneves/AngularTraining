@@ -1,11 +1,11 @@
-package crudclientes.clientes.resources;
+package br.com.java.solution.resources;
 
-import crudclientes.clientes.model.Cliente;
+import br.com.java.solution.model.Cliente;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import crudclientes.clientes.repository.ClienteRepository;
+import br.com.java.solution.repository.ClienteRepository;
 
 import java.util.List;
 import java.util.Optional;

@@ -1,4 +1,4 @@
-package crudclientes.clientes.model;
+package br.com.java.solution.model;
 
 import org.hibernate.annotations.CreationTimestamp;
 

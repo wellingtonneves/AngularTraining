@@ -1,6 +1,6 @@
-package crudclientes.clientes.repository;
+package br.com.java.solution.repository;
 
-import crudclientes.clientes.model.Cliente;
+import br.com.java.solution.model.Cliente;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {

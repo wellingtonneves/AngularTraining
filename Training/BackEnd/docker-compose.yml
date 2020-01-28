@@ -1,0 +1,35 @@
+version: '3.1'
+
+services:
+  solution:
+    image: 'docker pull wellingtondn/trainingsolutions:1.0'
+    container_name: 'solution'
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://host.docker.internal:5432/postgres
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=123
+      - MANAGEMENT_SECURITY_ENABLED=false
+      - MANAGEMENT_HEALTH_CONSUL_ENABLED=false
+      - SERVER_PORT=7171
+      - HTTP_PORT=7171
+    ports:
+      - 7171:7171docke
+    expose:
+      - "7171"
+    restart: on-failure
+    healthcheck:
+      test: curl --fail -s https://localhost:7171/ || exit 1
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+    networks:
+      localNet:
+        ipv4_address: '172.16.238.4'
+
+
+networks:
+  localNet:
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.16.238.0/24"
